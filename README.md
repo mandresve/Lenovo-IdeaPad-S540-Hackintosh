@@ -189,8 +189,6 @@ This systems support Voltageshift undervolting. Please refer to the official doc
 - [Apple](https://www.apple.com) for [macOS](https://www.apple.com/macos).
 - [lietxia](https://github.com/lietxia) for the base EFI.
 - [mandresve](https://about.me/mandresve) for the clean & optimized EFI.
-- [zxystd](https://github.com/zxystd) for developing [itlwm](https://github.com/OpenIntelWireless/itlwm).
-- [Bat.bat](https://github.com/williambj1) for developing [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware) and [HeliPort](https://github.com/OpenIntelWireless/HeliPort).
 - [alexandred](https://github.com/alexandred) for developing [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C).
 - [athlonreg](https://github.com/athlonreg/) for developing [ALCPlugFix](https://github.com/athlonreg/AppleALC-ALCPlugFix) to fix microphone switch issue.
 - [win1010525](https://github.com/win1010525) for add AIO version EFI.
