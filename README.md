@@ -29,7 +29,8 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 ## Current Status：
 
 * 🌌 OS Version：Monterey / Ventura
-* 🔊 Audio Card：Success with layout-id 15, no plosive [Headsets_with_Microphone](https://github.com/lietxia/XiaoXinAir14IML_2019_hackintosh/releases/tag/0.0.1)
+* 🔊 Audio Card：Success with layout-id 15, no plosive Headsets with Microphone
+* ⬇️ [Download](https://github.com/mandresve/Lenovo-IdeaPad-S540-Hackintosh/releases)
 
 ## Related model
 
