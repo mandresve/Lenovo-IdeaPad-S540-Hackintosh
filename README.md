@@ -32,7 +32,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 * 🔊 Audio Card：Success with layout-id 15, no plosive Headsets with Microphone
 * ⬇️ [Download](https://github.com/mandresve/Lenovo-IdeaPad-S540-Hackintosh/releases)
 
-## Related model
+## Related models
 
 * [Lenovo-XiaoXin-Air-14IML (i5-10210U/i7-10510U)](https://github.com/lietxia/XiaoXinAir14IML_2019_hackintosh)
 * [Lenovo-Ideapad-S540-15IML (i5-10210U)](https://github.com/3ig/IdeaPad-S540-15IML-hackintosh)
@@ -40,6 +40,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 * [Lenovo-Ideapad-S540-15IWL (i5-8265U)](https://github.com/IvanAleksandrov94/Lenovo-s340-s540-Big-Sur-OpenCore-i5-8265u)
 * [Lenovo-Ideapad-S540-14IML (i5-10210U)](https://github.com/marianopela/Lenovo-Ideapad-S540-14IML-Hackintosh)
 * [Lenovo-Ideapad-S540-14IWL (i5-8265U)](https://github.com/Hasodikis/Lenovo-Ideapad-s540-14IWL---Hackintosh)
+* [Lenovo-Ideapad-S540-14IML (i5-10210U / i7-10510U)](https://github.com/mandresve/Lenovo-IdeaPad-S540-Hackintosh)
 
 ## BIOS
 
