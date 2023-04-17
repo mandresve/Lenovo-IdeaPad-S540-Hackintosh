@@ -90,7 +90,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/dev/
 * Recommend: get into hidden BIOS
   - The way to enter hidden BIOS
     - Switch off the `OneKeyBattery`
-    - Press following buttons with your computer closed.
+    - Press following buttons with your computer in shutdown state.
       - `F4` → `4` → `R` → `F` → `V`
       - `F5` → `5` → `T` → `G` → `B`
       - `F6` → `6` → `Y` → `H` → `N`
