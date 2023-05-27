@@ -8,7 +8,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 | Item                | Status |                         Details                         |
 | :-------------------- | :------: | :-------------------------------------------------------: |
 | 💻 Computer model   |   ✅   |       Lenovo IdeaPad S540-14IML 2019 (Type 81NF)       |
-| 🌌 OS Version       |   ✅   |                    Monterey/Ventura                    |
+| 🌌 OS Version       |   ✅   |                    Monterey/Ventura (13.3 & 13.5 PLEASE SKIP 13.4)                    |
 | 🎛️ CPU            |   ✅   |            Intel Core i5-10210U / i7-10510U            |
 | 🎛️ Motherboard    |   ✅   |                    Lenovo 5B20W78206                    |
 | 🖐️ Fingerprint    |   ⛔   |         Synaptics - Fingerprint will never work         |
