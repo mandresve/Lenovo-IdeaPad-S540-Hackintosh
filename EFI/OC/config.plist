@@ -1093,11 +1093,11 @@
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>ShowPicker</key>
-			<false/>
+			<true/>
 			<key>TakeoffDelay</key>
 			<integer>0</integer>
 			<key>Timeout</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Debug</key>
 		<dict>
@@ -1319,9 +1319,9 @@
 			<key>SystemProductName</key>
 			<string>MacBookPro15,2</string>
 			<key>SystemSerialNumber</key>
-			<string>C02XK7YAJHCC</string>
+			<string>C02YF0F5MD6N</string>
 			<key>SystemUUID</key>
-			<string>34B0E696-FABA-43A9-9502-998060382E2D</string>
+			<string>DD1FA984-23A3-4CA7-9D3D-13BFCD4AE76C</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
