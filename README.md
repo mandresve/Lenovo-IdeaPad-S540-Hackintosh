@@ -104,7 +104,7 @@ Set your SIP to Disabled: under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE
 <br/>
 
 **STEP 6:**
-Change SecureBootModel to Disabled. How to do that? Under Misc section, security tab, set ```SecureBootModel``` key and set to ```Disabled```,
+Change SecureBootModel to Disabled. How to do that? Under Misc section, security tab, search for ```SecureBootModel``` key and set it to ```Disabled```,
 **or** (manually editing ```/EFI/OC/config.plist```):
 ```
                 <key>SecureBootModel</key>
@@ -116,7 +116,9 @@ Change SecureBootModel to Disabled. How to do that? Under Misc section, security
 Enable Kexts and Block Patch. How to do that?
 Under Kernel section, under ADD tab, enable ```IOSkywalkerFamily.kext```.
 Additionally, Under Kernel section, under BLOCK tab, enable ```Allow IOSkywalker Downgrade```.
+
 <br/>
+
 **Or** (manually editing ```/EFI/OC/config.plist```):
 
 <br/>
