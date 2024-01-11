@@ -89,6 +89,8 @@ From source:
 **STEP 4:**
 Make a copy of your current *and working* EFI. Copy ```/EFI/OC/config.plist``` as ```/EFI/OC/config-backup.plist```
 
+<br/>
+
 **STEP 5:**
 System Integrity Protection must be set to 0x803. How to do that? Editing ```/EFI/OC/config.plist``` manually or using OpenCore Configurator (**highly advisable**).
 Set your SIP to Disabled: under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE41995C9F82 key, then search ```csr-active-config``` key and set to ```30800000```.
@@ -115,7 +117,10 @@ Under Kernel section, under ADD tab, enable ```IOSkywalkerFamily.kext```.
 Additionally, Under Kernel section, under BLOCK tab, enable ```Allow IOSkywalker Downgrade```.
 <br/>
 **Or** (manually editing ```/EFI/OC/config.plist```):
+
 <br/>
+<br/>
+
 To enable ```IOSkywalkerFamily.kext``` kext:
 ```
                 <dict>
@@ -137,7 +142,10 @@ To enable ```IOSkywalkerFamily.kext``` kext:
                     <string>Contents/Info.plist</string>
                 </dict>
 ```
+
 <br/>
+<br/>
+
 To enable ```Allow IOSkywalker Downgrade``` patch:
 ```
                 <dict>
@@ -158,6 +166,7 @@ To enable ```Allow IOSkywalker Downgrade``` patch:
                 </dict>
 ```
 
+<br/>
 <br/>
 
 **STEP 8:**
