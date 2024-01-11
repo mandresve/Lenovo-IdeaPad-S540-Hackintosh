@@ -57,10 +57,11 @@ A collection of instructions and links to make Broadcom Wifi work natively again
 Below is a description of what to do.
 <details>
 <summary>Details</summary>
+  
 <br/>
 <br/>
   
-** STEP 1: **
+**STEP 1:**
 Disable Gatekeeper.
 
 Under Terminal, run the following:
@@ -119,7 +120,6 @@ Additionally, Under Kernel section, under BLOCK tab, enable ```Allow IOSkywalker
 **Or** (manually editing ```/EFI/OC/config.plist```):
 
 <br/>
-<br/>
 
 To enable ```IOSkywalkerFamily.kext``` kext:
 ```
@@ -144,7 +144,6 @@ To enable ```IOSkywalkerFamily.kext``` kext:
 ```
 
 <br/>
-<br/>
 
 To enable ```Allow IOSkywalker Downgrade``` patch:
 ```
@@ -167,20 +166,23 @@ To enable ```Allow IOSkywalker Downgrade``` patch:
 ```
 
 <br/>
-<br/>
 
 **STEP 8:**
 Save your modified EFI and reboot the system. Cross fingers...
 System must boot smoothly if everything performed as described.
+
 <br/>
 
 **STEP 9:**
 Run OCLP and install Root Patch for Modern Wifi (Needed after every update).
 How to do that? Open OCLP (downloaded at step 3) and click on "Root Patch"
+
 <br/>
 
 **STEP 10:**
 Reboot and check for native Broadcom Wifi. If it's not working, simply reset your NVRAM and check again.
+
+<br/>
 <br/>
 
 
