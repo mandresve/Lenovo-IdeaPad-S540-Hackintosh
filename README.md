@@ -57,9 +57,11 @@ A collection of instructions and links to make Broadcom Wifi work natively again
 Below is a description of what to do.
 <details>
 <summary>Details</summary>
-<br/>  
-**STEP 1:**
-Disable Gatekeeper
+<br/>
+<br/>
+  
+** STEP 1: **
+Disable Gatekeeper.
 
 Under Terminal, run the following:
 
@@ -89,8 +91,8 @@ Make a copy of your current *and working* EFI. Copy ```/EFI/OC/config.plist``` a
 
 **STEP 5:**
 System Integrity Protection must be set to 0x803. How to do that? Editing ```/EFI/OC/config.plist``` manually or using OpenCore Configurator (**highly advisable**).
-Set your SIP to Disabled. Under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE41995C9F82 key, then search ```csr-active-config``` key and set to ```30800000```
-**or** (manually editing ```/EFI/OC/config.plist```):
+Set your SIP to Disabled: under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE41995C9F82 key, then search ```csr-active-config``` key and set to ```30800000```.
+**Or** (manually editing ```/EFI/OC/config.plist```):
 
 ```
                     <key>csr-active-config</key>
@@ -99,7 +101,7 @@ Set your SIP to Disabled. Under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE
 <br/>
 
 **STEP 6:**
-Change SecureBootModel to Disabled.  How to do that? Under Misc section, security tab, set ```SecureBootModel``` key and set to ```Disabled```
+Change SecureBootModel to Disabled. How to do that? Under Misc section, security tab, set ```SecureBootModel``` key and set to ```Disabled```,
 **or** (manually editing ```/EFI/OC/config.plist```):
 ```
                 <key>SecureBootModel</key>
@@ -111,8 +113,10 @@ Change SecureBootModel to Disabled.  How to do that? Under Misc section, securit
 Enable Kexts and Block Patch. How to do that?
 Under Kernel section, under ADD tab, enable ```IOSkywalkerFamily.kext```.
 Additionally, Under Kernel section, under BLOCK tab, enable ```Allow IOSkywalker Downgrade```.
-**or** (manually editing ```/EFI/OC/config.plist```):
-To enable ```IOSkywalkerFamily.kext`` kext:
+<br/>
+**Or** (manually editing ```/EFI/OC/config.plist```):
+<br/>
+To enable ```IOSkywalkerFamily.kext``` kext:
 ```
                 <dict>
                     <key>Arch</key>
@@ -133,6 +137,7 @@ To enable ```IOSkywalkerFamily.kext`` kext:
                     <string>Contents/Info.plist</string>
                 </dict>
 ```
+<br/>
 To enable ```Allow IOSkywalker Downgrade``` patch:
 ```
                 <dict>
