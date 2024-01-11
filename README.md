@@ -26,7 +26,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 |     Camera🎦     |   ✅    |           it's pretty easy to drive USB camera         |
 |     Sleep😴      |   ✅    |                   Support native sleep.                |
 
-## Current Status：
+## Current Status
 * System🌌：Catalina / Big Sur / Monterey / Ventura / Sonoma
 * Disks🖴：If you are using Samsung PM981A, please consider to change.
 * Audio Card🔊：Success with layout-id 15, no plosive Headsets_with_Microphone
@@ -46,6 +46,86 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 * [Lenovo-Ideapad-S540-14IML (i5-10210U)](https://github.com/marianopela/Lenovo-Ideapad-S540-14IML-Hackintosh)
 * [Lenovo-Ideapad-S540-14IWL (i5-8265U)](https://github.com/Hasodikis/Lenovo-Ideapad-s540-14IWL---Hackintosh)
 * [Lenovo-Ideapad-S540-14IML (i5-10210U / i7-10510U)](https://github.com/mandresve/Lenovo-IdeaPad-S540-Hackintosh)
+
+## How to configure Broadcom WiFi in Sonoma (if not detected automatically)
+A collection of instructions and links to make Broadcom Wifi work natively again under macOS 14 (Sonoma Official Release at the time of editing), until such a time as proper support is added.
+<br/>
+<br/>
+**This process involves disabling SIP, so be warned.**
+<br/>
+<br/>
+Below is a description of what to do.
+<details>
+<summary>Details</summary>
+**STEP 1:**
+Disable Gatekeeper
+
+Under Terminal, run the following:
+
+```
+sudo spctl --master-disable
+```
+<br/>
+
+**STEP 2:**
+Download and *install* Kernel Debug Kit:
+
+From source:
+[Kernel Debug Kit](https://github.com/dortania/KdkSupportPkg/releases/download/23B5056e/Kernel_Debug_Kit_14.1_build_23B5056e.dmg)
+
+<br/>
+
+**STEP 3:**
+Download OCLP but *do not* install yet:
+
+From source:
+[OCLP](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/)
+
+<br/>
+
+**STEP 4:**
+System Integrity Protection is set to 0x803. How to do that?
+Set your SIP to Disabled (NVRAM - Add - 7C436110-AB2A-4BBB-A880-FE41995C9F82)
+
+```
+                    <key>csr-active-config</key>
+                    <data>AwgAAA==</data>
+```
+<br/>
+
+**STEP 5:**
+Change SecureBootModel to Disabled (Entries - Security)
+
+```
+                <key>SecureBootModel</key>
+                <string>Disabled</string>
+```
+<br/>
+
+**STEP 6:**
+Enable Kexts and Block Patch. How to do that?
+Under Kernel section, enable ```IOSkywalkerFamily.kext```.
+Additionally, Under Kernel section, enable BLOCK ```IOSkywalker Downgrade```.
+<br/>
+
+**STEP 7:**
+Save your modified EFI and reboot the system.
+<br/>
+
+**STEP 8:**
+Run OCLP and install Root Patch for Modern Wifi (Needed after every update).
+How to do that? Open OCLP (downloaded at step 3) and click on "Root Patch"
+<br/>
+
+**STEP 9:**
+Reboot and check for native Wifi. If it's not working, simply reset your NVRAM and check again.
+<br/>
+
+
+All credits go to the [OCLP team](https://github.com/dortania/OpenCore-Legacy-Patcher/), I merely put everything together for ease of use (for me, at least).
+
+
+</details>
 
 ## BIOS 
 https://newsupport.lenovo.com.cn/driveDownloads_detail.html?driveId=78312
