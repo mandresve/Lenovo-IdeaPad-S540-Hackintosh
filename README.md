@@ -18,7 +18,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 |     Disks💽      |   ✅    | Lenovo SSD 256G PCIe 2280 UMIS / Samsung SSD PM991 256G |
 |     Screen🖥️     |   ✅    |  AUO353D/LGD05EC ( 14-inches ) 1920x1080 60~75Hz(OC)   |
 |   Audio Card🔊   |   ✅    |                       Conexant CX8070                  |
-|    Wireless🌐    |   ✅    |      Replaced Atheros card with Broadcom BCM94360NG    |
+|    Wireless🌐    |   ✅    |Replaced Atheros card with Broadcom BCM94360NG (Needs config under Sonoma)|
 |   Bluetooth🦷    |   ✅    |                        BCM94360NG                      |
 | SD card reader🗂️ |   ✅    |                      O2 Micro / Realtek                |
 |    TrackPad🖐️    |   ✅    |                 Works in GPIO mode with Pin=50         |
@@ -27,9 +27,9 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 |     Sleep😴      |   ✅    |                   Support native sleep.                |
 
 ## Current Status
-* System🌌：Catalina / Big Sur / Monterey / Ventura / Sonoma
-* Disks🖴：If you are using Samsung PM981A, please consider to change.
-* Audio Card🔊：Success with layout-id 15, no plosive Headsets_with_Microphone
+* System：Catalina / Big Sur / Monterey / Ventura / Sonoma
+* Disks：If you are using Samsung PM981A, please consider to change.
+* Audio Card：Success with layout-id 15, no plosive Headsets_with_Microphone
 
 ## Related models
 * [XiaoXin Pro13 (i5-10210U / i7-10710U)](https://github.com/daliansky/XiaoXinPro-13-hackintosh)
@@ -57,6 +57,7 @@ A collection of instructions and links to make Broadcom Wifi work natively again
 Below is a description of what to do.
 <details>
 <summary>Details</summary>
+<br/>  
 **STEP 1:**
 Disable Gatekeeper
 
@@ -68,7 +69,7 @@ sudo spctl --master-disable
 <br/>
 
 **STEP 2:**
-Download and *install* Kernel Debug Kit:
+Download and **install** Kernel Debug Kit:
 
 From source:
 [Kernel Debug Kit](https://github.com/dortania/KdkSupportPkg/releases/download/23B5056e/Kernel_Debug_Kit_14.1_build_23B5056e.dmg)
@@ -76,7 +77,7 @@ From source:
 <br/>
 
 **STEP 3:**
-Download OCLP but *do not* install yet:
+Download OCLP but **do not install** yet:
 
 From source:
 [OCLP](https://github.com/dortania/OpenCore-Legacy-Patcher/releases/)
@@ -84,8 +85,12 @@ From source:
 <br/>
 
 **STEP 4:**
-System Integrity Protection is set to 0x803. How to do that?
-Set your SIP to Disabled (NVRAM - Add - 7C436110-AB2A-4BBB-A880-FE41995C9F82)
+Make a copy of your current *and working* EFI. Copy ```/EFI/OC/config.plist``` as ```/EFI/OC/config-backup.plist```
+
+**STEP 5:**
+System Integrity Protection must be set to 0x803. How to do that? Editing ```/EFI/OC/config.plist``` manually or using OpenCore Configurator (**highly advisable**).
+Set your SIP to Disabled. Under NVRAM section, search 7C436110-AB2A-4BBB-A880-FE41995C9F82 key, then search ```csr-active-config``` key and set to ```30800000```
+**or** (manually editing ```/EFI/OC/config.plist```):
 
 ```
                     <key>csr-active-config</key>
@@ -93,32 +98,75 @@ Set your SIP to Disabled (NVRAM - Add - 7C436110-AB2A-4BBB-A880-FE41995C9F82)
 ```
 <br/>
 
-**STEP 5:**
-Change SecureBootModel to Disabled (Entries - Security)
-
+**STEP 6:**
+Change SecureBootModel to Disabled.  How to do that? Under Misc section, security tab, set ```SecureBootModel``` key and set to ```Disabled```
+**or** (manually editing ```/EFI/OC/config.plist```):
 ```
                 <key>SecureBootModel</key>
                 <string>Disabled</string>
 ```
 <br/>
 
-**STEP 6:**
-Enable Kexts and Block Patch. How to do that?
-Under Kernel section, enable ```IOSkywalkerFamily.kext```.
-Additionally, Under Kernel section, enable BLOCK ```IOSkywalker Downgrade```.
-<br/>
-
 **STEP 7:**
-Save your modified EFI and reboot the system.
+Enable Kexts and Block Patch. How to do that?
+Under Kernel section, under ADD tab, enable ```IOSkywalkerFamily.kext```.
+Additionally, Under Kernel section, under BLOCK tab, enable ```Allow IOSkywalker Downgrade```.
+**or** (manually editing ```/EFI/OC/config.plist```):
+To enable ```IOSkywalkerFamily.kext`` kext:
+```
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>IOSkywalkFamily.kext</string>
+                    <key>Comment</key>
+                    <string>V1.0</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/IOSkywalkFamily</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>23.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+```
+To enable ```Allow IOSkywalker Downgrade``` patch:
+```
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>Comment</key>
+                    <string>Allow IOSkywalk Downgrade</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Identifier</key>
+                    <string>com.apple.iokit.IOSkywalkFamily</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string>23.0.0</string>
+                    <key>Strategy</key>
+                    <string>Exclude</string>
+                </dict>
+```
+
 <br/>
 
 **STEP 8:**
+Save your modified EFI and reboot the system. Cross fingers...
+System must boot smoothly if everything performed as described.
+<br/>
+
+**STEP 9:**
 Run OCLP and install Root Patch for Modern Wifi (Needed after every update).
 How to do that? Open OCLP (downloaded at step 3) and click on "Root Patch"
 <br/>
 
-**STEP 9:**
-Reboot and check for native Wifi. If it's not working, simply reset your NVRAM and check again.
+**STEP 10:**
+Reboot and check for native Broadcom Wifi. If it's not working, simply reset your NVRAM and check again.
 <br/>
 
 
