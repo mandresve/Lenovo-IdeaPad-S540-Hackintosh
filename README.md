@@ -27,7 +27,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 |     Sleep😴      |   ✅    |                   Support native sleep.                |
 
 ## Current Status
-* System：Catalina / Big Sur / Monterey / Ventura / Sonoma
+* System：Catalina / Big Sur / Monterey / Ventura / Sonoma / Sequoia
 * Disks：If you are using Samsung PM981A, please consider to change.
 * Audio Card：Success with layout-id 15, no plosive Headsets_with_Microphone
 
@@ -48,7 +48,7 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 * [Lenovo-Ideapad-S540-14IML (i5-10210U / i7-10510U)](https://github.com/mandresve/Lenovo-IdeaPad-S540-Hackintosh)
 
 ## How to configure Broadcom WiFi in Sonoma (if not detected automatically)
-A collection of instructions and links to make Broadcom Wifi work natively again under macOS 14 (Sonoma Official Release at the time of editing), until such a time as proper support is added.
+A collection of instructions and links to make Broadcom Wifi work natively again under macOS 14 and 15 (Sonoma/Sequoia). Those instructions are **already implemented** in the EFI, but **STEP 9 is required (OCLP)**.
 <br/>
 <br/>
 **This process involves disabling SIP, so be warned.**
