@@ -8,17 +8,17 @@ Model：Lenovo IdeaPad S540-14IML - Type 81NF
 |      Info        |  Status  |                         Details                        |
 | :--------------: | :------: | :----------------------------------------------------: |
 | Computer model💻 |   ✅    |        Lenovo IdeaPad S540-14IML 2019 (Type 81NF)      |
-|     System🌌     |   ✅    |          Catalina/Big Sur/Monterey/Ventura/Sonoma      |
+|     System🌌     |   ✅    |               All from Catalina to Sequoia             |
 |      CPU🎛️       |   ✅    |              Intel Core i5-10210U / i7-10510U          |
 |  Motherboard🎛️   |   ✅    |                     Lenovo 5B20W78206                  |
 |  Fingerprint🖐️   |   ⛔    |         Synaptics - Fingerprint will never work        |
 |      GPU👾       |   ⛔    |              Nvidia GeForce MX250 ( 2 GB )             |
 |      IGPU👾      |   ✅    |                      Intel UHD 620                     |
 |     Memory💳     |   ✅    |         Internal 4GB 2666 + Changeable 32GB 2666       |
-|     Disks💽      |   ✅    | Lenovo SSD 256G PCIe 2280 UMIS / Samsung SSD PM991 256G |
+|     Disks💽      |   ✅    |  Lenovo SSD 256G PCIe 2280 UMIS + Samsung PM991 256G   |
 |     Screen🖥️     |   ✅    |  AUO353D/LGD05EC ( 14-inches ) 1920x1080 60~75Hz(OC)   |
 |   Audio Card🔊   |   ✅    |                       Conexant CX8070                  |
-|    Wireless🌐    |   ✅    |Replaced Atheros card with Broadcom BCM94360NG (Needs config under Sonoma)|
+|    Wireless🌐    |   ✅    |      Replaced Atheros card with Broadcom BCM94360NG    |
 |   Bluetooth🦷    |   ✅    |                        BCM94360NG                      |
 | SD card reader🗂️ |   ✅    |                      O2 Micro / Realtek                |
 |    TrackPad🖐️    |   ✅    |                 Works in GPIO mode with Pin=50         |
